@@ -151,3 +151,21 @@ smurf.Display();
 //Avg.Rating: 4,1
 //Students: 54 - 65.3243534
 //Teachers:
+
+Console.WriteLine();
+MI.AddOwned(smurf);
+smurf.AddRating(MI, 5);
+smurf.Display();
+//OUTPUT:
+//Course: 'How to become a Smurf' is now taught by teacher: Malte Iversen...
+//Teacher: 'Malte Iversen' now teaches the course: 'How to become a Smurf'...
+//Name: How to become a Smurf
+//Type: Physical
+//CourseID: 43.431123
+//Price: 43
+//Subject: Magic
+//Number of Lessons: 10
+//Seats: 5000
+//Avg.Rating: 5
+//Students: 54 - 65.3243534
+//Teachers: 43 - 32.325441
