@@ -29,7 +29,6 @@ namespace LærNu
             Console.WriteLine($"Owned Courses: {string.Join(", ", OwnedCourses)}");
             Console.WriteLine($"Certificates: {string.Join(", ", Certifikater)}");
             Console.WriteLine($"TeacherID: {TeacherID}");
-            Console.WriteLine();
         }
         public void AddOwned(Course course)
         {
@@ -38,12 +37,10 @@ namespace LærNu
                 OwnedCourses.Add(course.CourseID);
                 Console.WriteLine($"Course: '{course.Name}' is now taught by teacher: {Name}...");
                 course.AddTeacher(this);
-                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine($"Course: '{course.Name}' is already taught by teacher: {Name}...");
-                Console.WriteLine();
             }
         }
         public void RemoveOwned(Course course)
@@ -53,12 +50,10 @@ namespace LærNu
                 OwnedCourses.Remove(course.CourseID);
                 Console.WriteLine($"Course: '{course.Name}' is no longer taught by teacher: {Name}");
                 course.RemoveTeacher(this);
-                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine($"Course: '{course.Name}' is no longer taught by teacher: {Name}");
-                Console.WriteLine();
             }
         }
         public void AddCert(string cert)
@@ -67,12 +62,10 @@ namespace LærNu
             {
                 Certifikater.Add(cert);
                 Console.WriteLine($"Certificate: '{cert}' has been added to teacher: {Name}'s certificates...");
-                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine($"Certificate: '{cert}' is already among teacher: {Name}'s certificates...");
-                Console.WriteLine();
             }
         }
         public void RemoveCert(string cert)
@@ -81,12 +74,10 @@ namespace LærNu
             {
                 Certifikater.Remove(cert);
                 Console.WriteLine($"Certificate: '{cert}' has been removed from teacher: {Name}'s certificates...");
-                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine($"Certificate: '{cert}' is not among teacher: {Name}'s certificates...");
-                Console.WriteLine();
             }
         }
 

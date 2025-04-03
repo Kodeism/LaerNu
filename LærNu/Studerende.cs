@@ -29,7 +29,6 @@ namespace LærNu
             Console.WriteLine($"Email: {Email}");
             Console.WriteLine($"Password: {Password}");
             Console.WriteLine($"Courses: {string.Join(", ", Courses)}");
-            Console.WriteLine();
         }
         public void AddCourse(Course course)
         {
@@ -43,7 +42,6 @@ namespace LærNu
             else
             {
                 Console.WriteLine($"Course: '{course.Name}' is already among student: {Name}'s courses...");
-                Console.WriteLine();
             }
         }
         public void RemoveCourse(Course course)
@@ -53,12 +51,10 @@ namespace LærNu
                 Courses.Remove(course.CourseID);
                 Console.WriteLine($"Course: '{course.Name}' has been removed from student: {Name}'s courses...");
                 course.RemoveStudent(this);
-                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine($"Course: '{course.Name}' is not among student: {Name}'s courses...");
-                Console.WriteLine();
             }
         }
     }

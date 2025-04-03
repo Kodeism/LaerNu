@@ -12,7 +12,7 @@ namespace LærNu
         public string CourseID { get; set; }
         public double Price { get; set; }
         public string Subject { get; set; }
-        private List<double> Ratings { get; set; }
+        private Dictionary<string,double> Ratings { get; set; }
         public int NumberofLessons { get; set; }
         public int Seats { get; set; }
         private List<string> StudentIDs { get; set; }
@@ -24,7 +24,7 @@ namespace LærNu
             CourseID = courseID;
             Price = price;
             Subject = subject;
-            Ratings = new List<double>();
+            Ratings = new Dictionary<string,double>();
             NumberofLessons = numberofLessons;
             Seats = seats;
             Type = type;
@@ -40,10 +40,9 @@ namespace LærNu
             Console.WriteLine($"Subject: {Subject}");
             Console.WriteLine($"Number of Lessons: {NumberofLessons}");
             Console.WriteLine($"Seats: {Seats}");
-            Console.WriteLine($"Avg. Rating: {Ratings.Sum()/Ratings.Count()}");
+            Console.WriteLine($"Avg. Rating: {Ratings.Values.Sum()/Ratings.Count()}");
             Console.WriteLine($"Students: {string.Join(", ", StudentIDs)}");
             Console.WriteLine($"Teachers: {string.Join(", ", TeacherIDs)}");
-            Console.WriteLine();
         }
         public void AddStudent(User student)
         {
@@ -51,12 +50,10 @@ namespace LærNu
             {
                 StudentIDs.Add(student.UserID);
                 Console.WriteLine($"Student: '{student.Name}' has been added to the course: '{Name}'...");
-                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine($"Student: '{student.Name}' is already in the course: '{Name}'...");
-                Console.WriteLine();
             }
         }
         public void RemoveStudent(User student)
@@ -65,12 +62,10 @@ namespace LærNu
             {
                 StudentIDs.Remove(student.UserID);
                 Console.WriteLine($"Student: '{student.Name}' has been removed from the course: '{Name}'...");
-                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine($"Student: '{student.Name}' is not in the course: '{Name}'...");
-                Console.WriteLine();
             }
         }
         public void AddTeacher(Teacher teacher)
@@ -79,12 +74,10 @@ namespace LærNu
             {
                 TeacherIDs.Add(teacher.TeacherID);
                 Console.WriteLine($"Teacher: '{teacher.Name}' now teaches the course: '{Name}'...");
-                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine($"Teacher: '{teacher.Name}' is already teaching the course: '{Name}'...");
-                Console.WriteLine();
             }
         }
         public void RemoveTeacher(Teacher teacher)
@@ -93,17 +86,22 @@ namespace LærNu
             {
                 TeacherIDs.Remove(teacher.UserID);
                 Console.WriteLine($"Teacher: '{teacher.Name}' no longer teaches the course: '{Name}'...");
-                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine($"Teacher: '{teacher.Name}' does not teach the course: '{Name}'...");
-                Console.WriteLine();
             }
         }
-        public void AddRating(double rating)
+        public void AddRating(User user,double rating)
         {
-            Ratings.Add(rating);
+            if (Ratings.ContainsKey(user.UserID))
+            {
+                Ratings[user.UserID] = rating;
+            }
+            else
+            {
+                Ratings.Add(user.UserID, rating);
+            }
         }
     }
 }
