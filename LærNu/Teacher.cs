@@ -36,13 +36,13 @@ namespace LærNu
             if(!(OwnedCourses.Contains(course.CourseID)))
             {
                 OwnedCourses.Add(course.CourseID);
-                Console.WriteLine($"Course: '{course.Name}' has been added to teacher: {Name}'s courses...");
+                Console.WriteLine($"Course: '{course.Name}' is now taught by teacher: {Name}...");
                 course.AddTeacher(this);
                 Console.WriteLine();
             }
             else
             {
-                Console.WriteLine($"Course: '{course.Name}' already among teacher: {Name}'s courses...");
+                Console.WriteLine($"Course: '{course.Name}' is already taught by teacher: {Name}...");
                 Console.WriteLine();
             }
         }
@@ -51,13 +51,13 @@ namespace LærNu
             if(OwnedCourses.Contains(course.CourseID))
             {
                 OwnedCourses.Remove(course.CourseID);
-                Console.WriteLine($"Course: '{course.Name}' has been removed from teacher: {Name}'s courses...");
+                Console.WriteLine($"Course: '{course.Name}' is no longer taught by teacher: {Name}");
                 course.RemoveTeacher(this);
                 Console.WriteLine();
             }
             else
             {
-                Console.WriteLine($"Course: '{course.Name}' is not among teacher: {Name}'s courses");
+                Console.WriteLine($"Course: '{course.Name}' is no longer taught by teacher: {Name}");
                 Console.WriteLine();
             }
         }

@@ -36,13 +36,13 @@ namespace LærNu
             if(!(Courses.Contains(course.CourseID)))
             {
                 Courses.Add(course.CourseID);
-                Console.WriteLine($"Course: '{course.Name}' has been added to user: {Name}'s courses...");
+                Console.WriteLine($"Course: '{course.Name}' has been added to student: {Name}'s courses...");
                 course.AddStudent(this);
                 Console.WriteLine();
             }
             else
             {
-                Console.WriteLine($"Course: '{course.Name}' is already among user: {Name}'s courses...");
+                Console.WriteLine($"Course: '{course.Name}' is already among student: {Name}'s courses...");
                 Console.WriteLine();
             }
         }
@@ -51,13 +51,13 @@ namespace LærNu
             if(Courses.Contains(course.CourseID))
             {
                 Courses.Remove(course.CourseID);
-                Console.WriteLine($"Course: '{course.Name}' has been removed from user: {Name}'s courses...");
+                Console.WriteLine($"Course: '{course.Name}' has been removed from student: {Name}'s courses...");
                 course.RemoveStudent(this);
                 Console.WriteLine();
             }
             else
             {
-                Console.WriteLine($"Course: '{course.Name}' is not among user: {Name}'s courses...");
+                Console.WriteLine($"Course: '{course.Name}' is not among student: {Name}'s courses...");
                 Console.WriteLine();
             }
         }

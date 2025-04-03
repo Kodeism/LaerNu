@@ -78,12 +78,12 @@ namespace LærNu
             if(!(TeacherIDs.Contains(teacher.TeacherID)))
             {
                 TeacherIDs.Add(teacher.TeacherID);
-                Console.WriteLine($"Teacher: '{teacher.Name}' has been added to the course: '{Name}'...");
+                Console.WriteLine($"Teacher: '{teacher.Name}' now teaches the course: '{Name}'...");
                 Console.WriteLine();
             }
             else
             {
-                Console.WriteLine($"Teacher: '{teacher.Name}' is already in the course: '{Name}'...");
+                Console.WriteLine($"Teacher: '{teacher.Name}' is already teaching the course: '{Name}'...");
                 Console.WriteLine();
             }
         }
@@ -92,12 +92,12 @@ namespace LærNu
             if(TeacherIDs.Contains(teacher.UserID))
             {
                 TeacherIDs.Remove(teacher.UserID);
-                Console.WriteLine($"Teacher: '{teacher.Name}' has been removed from the course: '{Name}'...");
+                Console.WriteLine($"Teacher: '{teacher.Name}' no longer teaches the course: '{Name}'...");
                 Console.WriteLine();
             }
             else
             {
-                Console.WriteLine($"Teacher: '{teacher.Name}' is not in the course: '{Name}'...");
+                Console.WriteLine($"Teacher: '{teacher.Name}' does not teach the course: '{Name}'...");
                 Console.WriteLine();
             }
         }
