@@ -80,16 +80,20 @@ MI.Display();
 //Certificates: Tiny Gigantism
 //TeacherID: 43-32.325441
 
-PS = new Teacher(PS, "23-54.34213");
-PS.Display();
+Teacher Ps = new Teacher(PS, "23-54.34213");
+Ps.Display();
+//OUTPUT:
+//Ps.Display();
 //Name: Pia Stanø
 //UserID 54-65.3243534
-//Email: Pia.S @mail.com
+//Email: Pia.S@mail.com
 //Password: 76GFD @LKR
 //Courses:
 //Owned Courses:
 //Certificates:
 //TeacherID: 23-54.34213
+
+
 
 voice.Display();
 //OUTPUT:
